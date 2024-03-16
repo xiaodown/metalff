@@ -1,1 +1,2 @@
-mysql_connector_repackaged==0.3.1
+psycopg2==2.9.9
+pydbml==1.0.9

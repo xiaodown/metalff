@@ -4,5 +4,9 @@
 #
 #    pip-compile
 #
-mysql-connector-repackaged==0.3.1
+psycopg2==2.9.9
     # via -r requirements.in
+pydbml==1.0.9
+    # via -r requirements.in
+pyparsing==3.1.2
+    # via pydbml

@@ -1,0 +1,54 @@
+Table musician {
+  name string
+  id string [primary key]
+  band_id string
+}
+
+Table band {
+  name string
+  id string [primary key]
+}
+
+Ref: musician.band_id - band.id
+
+Table followers {
+  check_date timestamp
+  band_id string
+  followers int
+}
+
+Ref: followers.band_id > band.id
+
+table users {
+  id string [primary key]
+  created_at datetime
+  username string
+}
+
+table team {
+  id string [primary key]
+  name string
+  guitar1_id string
+  guitar2_id string
+  bass_id string
+  drum_id string
+  vocal_id string
+  owner_id string
+  founded_on datetime
+  season_id string
+}
+
+ref: team.guitar1_id > musician.id
+ref: team.guitar2_id > musician.id
+ref: team.bass_id > musician.id
+ref: team.drum_id > musician.id
+ref: team.vocal_id > musician.id
+ref: team.owner_id > users.id
+
+table season {
+  id string [primary key]
+  started_at datetime
+  ended_at datetime
+}
+
+ref: team.season_id > season.id
