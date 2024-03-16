@@ -8,7 +8,10 @@ Oh god, we're not there yet.
 
 Run the script `./generate-requirements.sh` to create requirements.txt
 
-Then create a venv, and `pip install -r requirements.txt` 
+Then create a venv, and `pip install -r requirements.txt`.  
+
+Made using python3.11; probably requires something like python3.8+.
+
 
 #### Generate schema
 
