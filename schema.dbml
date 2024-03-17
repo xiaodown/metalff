@@ -38,6 +38,7 @@ table team {
   owner_id string
   founded_on datetime
   season_id string
+  league_id string
 }
 
 ref: team.guitar1_id > musician.id
@@ -46,6 +47,16 @@ ref: team.bass_id > musician.id
 ref: team.drum_id > musician.id
 ref: team.vocal_id > musician.id
 ref: team.owner_id > users.id
+ref: team.season_id > season.id
+ref: team.league_id > league.id
+
+table league {
+  id string [primary key]
+  season_id string
+  name string
+}
+
+ref: table.season_id > season.id
 
 table season {
   id string [primary key]
