@@ -2,6 +2,7 @@ Table musician {
   name string
   id string [primary key]
   band_id string
+  instrument string
 }
 
 Table band {
