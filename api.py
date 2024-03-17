@@ -4,9 +4,6 @@ import settings
 import shortuuid
 from typing import Optional
 
-# Sucks, obviously completely bullshit
-
-
 def pg_client():
     return psycopg2.connect(
         dbname=settings.PG_DATABASE or 'metalff',
@@ -16,6 +13,7 @@ def pg_client():
         port=settings.PG_PORT or 5432
     )
 
+# Sucks, obviously completely bullshit
 
 class User:
     def __init__(self, username, teams=None):
@@ -83,7 +81,7 @@ class musician:
                 ''', (name,))
                 return sql.fetchone()
             
-    def get_all_by_band_id(self, band_id: str):
+    def get_by_band_id(self, band_id: str):
         with pg_client() as conn:
             with conn.cursor() as sql:
                 sql.execute('''
@@ -91,7 +89,7 @@ class musician:
                 ''', (band_id,))
                 return sql.fetchall()
     
-    def get_all_by_instrument(self, instrument: str):
+    def get_by_instrument(self, instrument: str):
         with pg_client() as conn:
             with conn.cursor() as sql:
                 sql.execute('''
