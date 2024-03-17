@@ -7,6 +7,7 @@ Table musician {
 Table band {
   name string
   id string [primary key]
+	spotify_id string
 }
 
 Ref: musician.band_id - band.id
@@ -52,3 +53,4 @@ table season {
 }
 
 ref: team.season_id > season.id
+
