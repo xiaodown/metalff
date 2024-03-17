@@ -8,7 +8,7 @@ Oh god, we're not there yet.
 
 Run the script `.scripts/generate-requirements.sh` to create requirements.txt
 
-Then create a venv, and `pip install -r requirements.txt`.  
+Then create a venv, and `pip install -r requirements.txt`.
 
 Made using python3.11; probably requires something like python3.8+.
 
@@ -16,3 +16,8 @@ Made using python3.11; probably requires something like python3.8+.
 #### Generate schema
 
 Inside the venv, run `python scripts/generate-schema.py` which will output schema.sql
+
+
+#### Settings
+
+Copy `settings.py.example` to `settings.py` and edit as needed. (not future proof)
